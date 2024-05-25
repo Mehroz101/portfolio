@@ -29,7 +29,7 @@ const Contact = () => {
           Get in touch to discuss your project, ask questions, or collaborate.
           I'm here to help you bring your vision to life.
         </p>
-        <form action="" className="contactForm" ref={form} onSubmit={sendEmail}>
+        <form action="" method="post" className="contactForm" ref={form} onSubmit={sendEmail}>
           <input type="text" placeholder="Your Name" className="field name" name="from_name" />
           <input
             type="email"
