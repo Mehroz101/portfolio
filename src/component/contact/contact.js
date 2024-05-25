@@ -1,6 +1,26 @@
-import React from "react";
+import React,{useRef} from "react";
 import "./contact.css";
+import emailjs from '@emailjs/browser';
+
 const Contact = () => {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_6fta7ia', 'template_y3t3k7a', form.current, {
+        publicKey: 'IEH12cyBf1BeKxglo',
+      })
+      .then(
+        () => {
+          alert("Email sent successfully")
+          e.target.reset()
+        },
+        (error) => {
+          alert('FAILED...', error.text);
+        },
+      );
+  };
   return (
     <>
       <div id="contact">
@@ -9,15 +29,16 @@ const Contact = () => {
           Get in touch to discuss your project, ask questions, or collaborate.
           I'm here to help you bring your vision to life.
         </p>
-        <form action="" className="contactForm">
-          <input type="text" placeholder="Your Name" className="field name" />
+        <form action="" className="contactForm" ref={form} onSubmit={sendEmail}>
+          <input type="text" placeholder="Your Name" className="field name" name="from_name" />
           <input
             type="email"
             placeholder="Your Email"
             className="field email"
+            name="from_email"
           />
           <textarea
-            name="msg"
+            name="message"
             cols="30"
             rows="5"
             placeholder="Your Message"
