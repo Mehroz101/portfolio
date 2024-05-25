@@ -18,9 +18,9 @@ const Intro = () => {
               engagement.
             </p>
             <Link>
-              <a href="">
+              
                 <button>Get Started</button>
-              </a>
+             
             </Link>
           </div>
           <div className="right">
