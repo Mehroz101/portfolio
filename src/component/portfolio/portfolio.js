@@ -1,6 +1,6 @@
 import React from "react";
 import "./portfolio.css";
-import port1 from "../../assets/portfolio-1.png";
+import port1 from "../../assets/Mehroz-Portfolio.png";
 import port2 from "../../assets/portfolio-2.png";
 import port3 from "../../assets/portfolio-3.png";
 import port4 from "../../assets/portfolio-4.png";
